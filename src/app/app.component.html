@@ -1,14 +1,37 @@
-<form class="styled-form">
-  <div class="form-group">
-    <div class="button_group">
-      <label for="input1">Upload summary</label>
-      <input type="file" name="" id="input1" (change)="onFileChange($event)" />
+<div class="container">
+  <div class="row upload">
+    <div class="upload-label">Select your file</div>
+    <form class="styled-form">
+      <div class="form-group">
+        <div class="button_group">
+          <label for="input1">Upload summary</label>
+          <input type="file" name="" id="input1" (change)="onFileChange($event)" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row preview">
+    <div class="preview-left">Preview left</div>
+    <div class="preview-right">
+      <table id="se-summary-preview" class="ExcelTable2007">
+        <tr class="row-heading">
+          <th class="heading">&nbsp;</th>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+          <th>Column 4</th>
+        </tr>
+        <tr class="row-data">
+          <td class="heading">298</td>
+          <td>Milwaukee </td>
+          <td>578,887</td>
+          <td>22</td>
+          <td>53203</td>
+        </tr>
+      </table>
     </div>
   </div>
+</div>
 
-  <div [innerHTML]="htmlContent"></div>
-  
-  <div class="form-actions">
-    <button type="submit">Submit</button>
-  </div>
-</form>
+
+

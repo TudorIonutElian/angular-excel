@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { read, utils } from 'xlsx';
 
-import * as XLSX from 'xlsx';
+interface President { Name: string; Index: number };
 
 @Component({
   selector: 'app-root',
@@ -12,38 +13,31 @@ import * as XLSX from 'xlsx';
 })
 export class AppComponent {
   title = 'my-angular-app';
-  htmlContent: string = '';
-
-  constructor() {
-    // Load sample data when the component is initialized
-    this.loadSampleData();
-  }
-
-  loadSampleData(): void {
-    const csv = ``;
-
-    // Parse CSV into a workbook object
-    const wb = XLSX.read(csv, { type: 'string' });
-
-    // Get the worksheet (default name "Sheet1")
-    const ws = wb.Sheets['Sheet1'];
-
-    // Create HTML table and set content
-    this.htmlContent = XLSX.utils.sheet_to_html(ws, { id: 'tabeller' });
-  }
+  rows: President[] = [];
 
   async onFileChange(event: any): Promise<void> {
     const file = event.target.files[0];
     if (file) {
       // Read the file as ArrayBuffer
-      const data = await file.arrayBuffer();
+      
+      const ab = await file.arrayBuffer();
 
-      // Parse and load the first worksheet
-      const wb = XLSX.read(data);
-      const ws = wb.Sheets[wb.SheetNames[0]];
+      // Create a new workbook
 
-      // Generate HTML and update the view
-      this.htmlContent = XLSX.utils.sheet_to_html(ws, { id: 'tabeller' });
+      const wb = read(ab, { type: 'array' });
+
+      // Get the first worksheet
+
+      const wsname = wb.SheetNames[0];
+      const ws = wb.Sheets[wsname];
+
+      // Convert the worksheet to an array of JSON objects
+
+      const data: any[][] = utils.sheet_to_json(ws, { header: 1 });
+
+      // Update the rows
+
+      this.rows = data.map((r, i) => ({ Name: r[0], Index: i }));
     }
   }
 }

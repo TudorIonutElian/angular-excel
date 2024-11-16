@@ -1,56 +1,229 @@
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
-        align-items: center;
-    }
+.button_section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
 
-    input{
-        display: none;
-    }
+.button_group input {
+  display: none;
+}
 
-    label {
-        font-size: 1rem;
-        cursor: pointer;
-        display: block;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin: 10px 0px;
-        transition: all 0.3s ease;
-    }
+.button_group label{
+  font-size: 1rem;
+  width: 200px;
+  cursor: pointer;
+  display: block;
+  color: #fff;
+  padding: 10px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
 
-    label{
-        background-color: #007BFF;;
-    }
+.button_group label{
+  background-color: #1e2350;
+}
 
-    label:hover{
-        background-color: #11142e;
-    }
+.button_group label:hover{
+  background-color: #11142e;
+}
 
-    .form-actions {
-        text-align: center;
-      }
-      
-    .form-actions button {
-        padding: .5em 1em;
-        border: none;
-        border-radius: .25em;
-        background-color: #007BFF;
-        color: white;
-        font-size: 1em;
-    }
-
-    /* You can style your table here */
-    #tabeller {
-        border-collapse: collapse;
-    }
-    
-    #tabeller th, #tabeller td {
-        border: 1px solid black;
-        padding: 8px;
-        text-align: center;
-    }
+.styled-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+  }
   
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: .5em;
+  }
+  
+  .form-group input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-label {
+    display: inline-block;
+    padding: .5em 1em;
+    border: 1px solid #ccc;
+    border-radius: .25em;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .custom-file-label:hover {
+    background-color: #0056b3;
+  }
+  
+  .ExcelTable2007 {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1em;
+  }
+  
+  .ExcelTable2007 table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  .ExcelTable2007 th,
+  .ExcelTable2007 td {
+    border: 1px solid #d0d7e5;
+    padding: 8px;
+  }
+  
+  .ExcelTable2007 th {
+    background-color: #f3f3f3;
+    color: #333;
+  }
+  
+  .ExcelTable2007 tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .ExcelTable2007 tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .form-actions {
+    text-align: center;
+  }
+  
+  .form-actions button {
+    padding: .5em 1em;
+    border: none;
+    border-radius: .25em;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1em;
+  }
 
+
+  .ExcelTableXP {
+    border: 1px solid #716F64;
+    border-width: 1px 0px 0px 1px;
+    font-size: 10pt;
+    font-family: arial;
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+  
+  .ExcelTableXP TH {
+    background-color: #EFEDDE;
+    border: 1px solid #ACA899;
+    border-width: 0px 1px 1px 0px;
+  }
+  
+  .ExcelTableXP TD {
+    border: 0px;
+    background-color: white;
+    padding: 0px 4px 0px 2px;
+    border: 1px solid #C0C0C0;
+    border-width: 0px 1px 1px 0px;
+  }
+  
+  .ExcelTableXP TD.heading {
+    background-color: #EFEDDE;
+    padding: 0px 0px 0px 0px;
+    border: 1px solid #ACA899;
+    border-width: 0px 1px 1px 0px;
+  }
+  
+  .ExcelTable2007 {
+    border: 1px solid #B0CBEF;
+    border-width: 1px 0px 0px 1px;
+    font-size: 11pt;
+    font-family: Calibri;
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+  
+  .ExcelTable2007 TH {
+    background-image: url(excel-2007-header-bg.gif);
+    background-repeat: round; 
+    background-size: cover;
+    font-size: 14px;
+    border: 1px solid #9EB6CE;
+    border-width: 0px 1px 1px 0px;
+    height: 30px;
+  }
+  
+  .ExcelTable2007 TD {
+    border: 0px;
+    background-color: white;
+    padding: 0px 4px 0px 2px;
+    border: 1px solid #D0D7E5;
+    border-width: 0px 1px 1px 0px;
+  }
+  
+  .ExcelTable2007 TD.heading {
+    background-color: #E4ECF7;
+    border: 1px solid #9EB6CE;
+    border-width: 0px 1px 1px 0px;
+  }
+
+  .row-heading {
+    font-weight: bold;
+    text-align: center;
+  }
+  .row-data {
+    height: 30px;
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .row.upload{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    
+
+    div.upload-label {
+      width: 80%;
+      padding: 10px;
+      text-align: right;
+      vertical-align: middle;
+    }
+
+    form {
+      width: 20%;
+    }
+  }
+
+  .row.preview {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+
+    .preview-left {
+      width: 40%;
+      padding: 10px;
+      height: 100%;
+    }
+
+    .preview-right {
+      width: 60%;
+      padding: 10px;
+      height: 100%;
+    }
+  }
+  
+  
