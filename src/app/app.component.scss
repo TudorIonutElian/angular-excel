@@ -1,0 +1,44 @@
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        align-items: center;
+    }
+
+    input{
+        display: none;
+    }
+
+    label {
+        font-size: 1rem;
+        cursor: pointer;
+        display: block;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px 0px;
+        transition: all 0.3s ease;
+    }
+
+    label{
+        background-color: #007BFF;;
+    }
+
+    label:hover{
+        background-color: #11142e;
+    }
+
+    .form-actions {
+        text-align: center;
+      }
+      
+    .form-actions button {
+        padding: .5em 1em;
+        border: none;
+        border-radius: .25em;
+        background-color: #007BFF;
+        color: white;
+        font-size: 1em;
+    }
+
