@@ -217,6 +217,19 @@
       width: 40%;
       padding: 10px;
       height: 100%;
+
+      .sheet {
+        font-weight: bold;
+        padding: 10px;
+
+        span {
+          display: inline-block;
+          background-color:#11142e;
+          color:#D0D7E5;
+          padding: 5px;
+          border-radius: 3px;
+        }
+      }
     }
 
     .preview-right {

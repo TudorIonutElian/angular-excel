@@ -11,23 +11,34 @@
     </form>
   </div>
   <div class="row preview">
-    <div class="preview-left">Preview left</div>
+    <div class="preview-left">
+      @for(sheet of sheets; track $index) {
+        <div class="sheet">
+          <span>{{sheet}}</span>
+        </div>
+      }
+    </div>
     <div class="preview-right">
       <table id="se-summary-preview" class="ExcelTable2007">
         <tr class="row-heading">
           <th class="heading">&nbsp;</th>
-          <th>Column 1</th>
-          <th>Column 2</th>
-          <th>Column 3</th>
-          <th>Column 4</th>
+          <th>Item</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Cost</th>
+          <th>Disallowable</th>
         </tr>
-        <tr class="row-data">
-          <td class="heading">298</td>
-          <td>Milwaukee </td>
-          <td>578,887</td>
-          <td>22</td>
-          <td>53203</td>
-        </tr>
+
+        @for(row of rows; track $index) {
+          <tr class="row-data">
+            <td class="heading">{{row.Index+1}}</td>
+            <td>{{ row.Item}}</td>
+            <td>{{ row.StartDate}}</td>
+            <td>{{ row.EndDate}}</td>
+            <td>{{ row.Cost}}</td>
+            <td>{{ row.Disallowable}}</td>
+          </tr>
+        }
       </table>
     </div>
   </div>

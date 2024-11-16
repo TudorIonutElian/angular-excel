@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { read, utils } from 'xlsx';
 
-interface President { Name: string; Index: number };
+interface President {
+  Item: string;
+  Index: number;
+  StartDate: string;
+  EndDate: string;
+  Cost: number;
+  Disallowable: number;
+};
 
 @Component({
   selector: 'app-root',
@@ -14,17 +21,22 @@ interface President { Name: string; Index: number };
 export class AppComponent {
   title = 'my-angular-app';
   rows: President[] = [];
+  sheets: any[] = [];
 
   async onFileChange(event: any): Promise<void> {
     const file = event.target.files[0];
     if (file) {
       // Read the file as ArrayBuffer
-      
+
       const ab = await file.arrayBuffer();
 
       // Create a new workbook
 
       const wb = read(ab, { type: 'array' });
+
+      // Get all the sheet names
+
+      this.sheets = wb.SheetNames;
 
       // Get the first worksheet
 
@@ -35,9 +47,17 @@ export class AppComponent {
 
       const data: any[][] = utils.sheet_to_json(ws, { header: 1 });
 
-      // Update the rows
+      // Update the rows for each sheet
 
-      this.rows = data.map((r, i) => ({ Name: r[0], Index: i }));
+      this.rows = data.slice(1).map((r, i) => (
+        {
+          Item: r[0],
+          Index: i,
+          StartDate: r[1],
+          EndDate: r[2],
+          Cost: r[3],
+          Disallowable: r[4]}
+      ));
     }
   }
 }
