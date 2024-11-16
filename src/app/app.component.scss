@@ -42,3 +42,15 @@
         font-size: 1em;
     }
 
+    /* You can style your table here */
+    #tabeller {
+        border-collapse: collapse;
+    }
+    
+    #tabeller th, #tabeller td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+  
+
